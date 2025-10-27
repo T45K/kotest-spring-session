@@ -21,8 +21,9 @@ dependencies {
     // Kotest 6
     testImplementation("io.kotest:kotest-runner-junit5:6.0.4")
     testImplementation("io.kotest:kotest-assertions-core:6.0.4")
-    testImplementation("io.kotest:kotest-extensions-spring:6.0.4")
-    // testImplementation("io.kotest:kotest-extensions-spring:6.0.3")
+    testImplementation("io.kotest:kotest-extensions-spring:6.0.4") {
+        exclude(group = "org.springframework.boot", module = "spring-boot-starter-web")
+    }
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
